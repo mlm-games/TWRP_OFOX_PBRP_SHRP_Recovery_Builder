@@ -20,11 +20,11 @@ on:
         - twrp-5.1
         - twrp-4.4-deprecated
       DEVICE_TREE:
-        description: 'Custom Recovery Tree' # Your already made Device Tree for TWRP
+        description: 'https://github.com/twrpdtgen/android_device_infinix_Infinix-X6823C' # Your already made Device Tree for TWRP
         required: true
         default: 'https://github.com/username/repo'
       DEVICE_TREE_BRANCH:
-        description: 'Custom Recovery Tree Branch' # Your Device Tree Branch, make sure it's right.
+        description: 'twrpdtgen' # Your Device Tree Branch, make sure it's right.
         required: true
         default: 'enter_your_branch'
       DEVICE_PATH:
@@ -40,7 +40,7 @@ on:
         required: true
         default: 'omni_'
       BUILD_TARGET:
-        description: 'Specify your Build Target' # Pick among boot, recovery and vendor_boot
+        description: 'boot' # Pick among boot, recovery and vendor_boot
         required: true
         default: 'recovery'
         type: choice
