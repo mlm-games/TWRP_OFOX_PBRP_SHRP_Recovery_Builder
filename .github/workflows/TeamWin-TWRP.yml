@@ -21,11 +21,11 @@ on:
         - twrp-5.1
         - twrp-4.4-deprecated
       DEVICE_TREE:
-        description: 'Custom Recovery Tree' # Your already made Device Tree for TWRP
+        description: 'Custom Recovery Tree' 
         required: true
         default: 'https://github.com/username/repo'
       DEVICE_TREE_BRANCH:
-        description: 'Custom Recovery Tree Branch' # Your Device Tree Branch, make sure it's right.
+        description: 'Custom Recovery Tree Branch'
         required: true
         default: 'enter_your_branch'
       DEVICE_PATH:
@@ -41,7 +41,7 @@ on:
         required: true
         default: 'omni_'
       BUILD_TARGET:
-        description: 'Specify your Build Target' # Pick among boot, recovery and vendor_boot
+        description: 'Specify your Build Target'
         required: true
         default: 'recovery'
         type: choice
@@ -55,7 +55,7 @@ on:
         default: 'false'
         type: boolean
       LDCHECKPATH:
-        description: 'Path of blobs to check' # Use it know what kind of dependencies your missing for decryption blobs.
+        description: 'Path of blobs to check'
         required: true
         default: 'system/bin/qseecomd'
 
@@ -141,13 +141,13 @@ jobs:
         lunch ${{ inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ inputs.BUILD_TARGET }}image -j$(nproc --all)
         echo "Done building your ${{ inputs.BUILD_TARGET }}.img"
 
-    - name: Set Build Date # Output will be use in Release
+    - name: Set Build Date 
       run: |
         echo "BUILD_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
       
     - name: Upload to Release
       if: success()
-      uses: softprops/action-gh-release@master
+      uses: softprops/action-gh-release@v1
       with:
         files: |
           android-recovery/out/target/product/${{ inputs.DEVICE_NAME }}/${{ inputs.BUILD_TARGET }}.img
@@ -172,3 +172,4 @@ jobs:
         python3 ldcheck -p system/lib64:vendor/lib64:system/lib:vendor/lib -d ${{ inputs.LDCHECKPATH }}
         echo "Done checking missing dependencies. Review, and reconfigure your tree."
       continue-on-error: true
+      
