@@ -20,15 +20,15 @@ on:
       DEVICE_TREE:
         description: 'Custom Recovery Tree URL'
         required: true
-        default: 'https://github.com/enter_username/repo_name'
+        default: 'https://github.com/kay6888/device_motorola_fogo'
       DEVICE_TREE_BRANCH:
         description: 'Device Tree Branch (optional)'
-        required: false
-        default: ''
+        required: true
+        default: 'android-12.1'
       BUILD_TARGET:
         description: 'Build Target (use "pbrp" for Android 11+)'
         required: true
-        default: 'recovery'
+        default: 'boot'
         type: choice
         options:
         - pbrp
@@ -43,7 +43,7 @@ on:
 jobs:
   build:
     name: Build PBRP by ${{ github.actor }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
       DEBIAN_FRONTEND: noninteractive
