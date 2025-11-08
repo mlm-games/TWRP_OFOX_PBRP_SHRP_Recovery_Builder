@@ -18,15 +18,15 @@ on:
       DEVICE_TREE_BRANCH:
         description: 'Custom Recovery Tree Branch (use master if default)'
         required: true
-        default: 'your_branch_name'
-      DEVICE_NAME:
+        default: 'master'
+      DEVICE_NAME: m14x
         description: 'Specify your Device Codename' # As is, just like your PRODUCT_DEVICE in your device tree.
         required: true
-        default: '7304X'
+        default: 'm14x'
       DEVICE_PATH:
         description: 'Specify your Device Path (Check the DEVICE_PATH in BoardConfig.mk)' # As is, just like your DEVICE_PATH in your BoardConfig.mk
         required: true
-        default: 'device/device`s_company/Codename'
+        default: 'device/samsung/m14x'
       BUILD_TARGET:
         description: 'Specify your Build Target' # The image suffix will be added later in build step.
         required: true
