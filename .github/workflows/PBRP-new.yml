@@ -57,7 +57,7 @@ jobs:
         echo "BUILD_DATE=$(TZ=UTC date +%Y%m%d)" >> $GITHUB_ENV
         
     - name: Checkout
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     - name: Clean-up
       uses: rokibhasansagar/slimhub_actions@main
