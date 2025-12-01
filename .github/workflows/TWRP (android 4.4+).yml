@@ -72,7 +72,7 @@ jobs:
         echo "::endgroup::"
  
     - name: Check Out
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     # Cleanup The Actions Workspace Using Custom Composite Run Actions
     - name: Cleanup

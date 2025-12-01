@@ -64,7 +64,7 @@ jobs:
       contents: write
     steps:
     - name: Check Out
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       
     - name: Display Inputs
       run: |
