@@ -9,6 +9,7 @@ on:
         default: ''
         type: choice
         options:
+        - twrp-14.1
         - twrp-14
         - twrp-12.1
         - twrp-11
@@ -37,7 +38,7 @@ on:
         required: true
         default: ''
       MAKEFILE_NAME:
-        description: 'MAKEFILE_NAME (without including .mk, Example: omni_7304F)'
+        description: 'MAKEFILE_NAME (excluding .mk extension, Example: omni_7304F)'
         required: true
         default: 'omni_'
       BUILD_TARGET:
