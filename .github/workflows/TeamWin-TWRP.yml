@@ -9,6 +9,7 @@ on:
         default: ''
         type: choice
         options:
+        - twrp-14.1
         - twrp-14
         - twrp-12.1
         - twrp-11
@@ -37,7 +38,7 @@ on:
         required: true
         default: ''
       MAKEFILE_NAME:
-        description: 'MAKEFILE_NAME (without including .mk, Example: omni_7304F)'
+        description: 'MAKEFILE_NAME (excluding .mk extension, Example: omni_7304F)'
         required: true
         default: 'omni_'
       BUILD_TARGET:
@@ -62,7 +63,7 @@ on:
 jobs:
   build:
     name: Build TWRP by ${{ github.actor }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     if: github.event.repository.owner.id == github.event.sender.id
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
