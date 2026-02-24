@@ -1,0 +1,17 @@
+task:
+  name: "Build PBRP Herolte"
+  timeout_in: 120m
+  container:
+    image: apon77/ubuntu:20.04
+    cpu: 8
+    memory: 24G
+
+  build_script:
+    - export MANIFEST="https://github.com/PitchBlackRecoveryProject/manifest_pb"
+    - export DEVICE_TREE="https://github.com/NeonFart/android_device_samsung_hero"
+    - export DEVICE_BRANCH="herolte"
+    - export DEVICE_PATH="device/samsung/herolte"
+    - export DEVICE_NAME="herolte"
+    - export MAKEFILE_NAME="pbrp_herolte"
+    - export BUILD_TARGET="pbrp"
+    - bash build.sh
